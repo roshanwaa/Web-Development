@@ -23,6 +23,8 @@ footer {
 }
 
 .tile-image {
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
   height: 200px;
   margin-right: 2rem;
   float: left;
@@ -35,9 +37,13 @@ footer {
 
 .left {
   float: left;
+  background: #c26c6c95;
+  border-radius: 2rem;
 }
 
 .right {
+  background: #c26c6c95;
+  border-radius: 2rem;
   float: right;
 }
 
