@@ -8,14 +8,14 @@ str =
 
 console.log(str.toLowerCase());
 
-var usrName = 'roshan';
+var usrName = 'roshAN';
 
 var firstChar = usrName.slice(0, 1);
 
 var upperCaseFirstChar = firstChar.toUpperCase();
 
-var restName = usrName.slice(1, usrName.length);
+var restName = usrName.slice(1, usrName.length).toLowerCase();
 
 var capitalizeName = upperCaseFirstChar + restName;
 
-console.log(capitalizeName);
+console.log('Hello ' + capitalizeName);
