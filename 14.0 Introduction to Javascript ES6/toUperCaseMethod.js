@@ -7,3 +7,15 @@ str =
   'LOREM IPSUM DOLOR SIT AMET CONSECTETUR ADIPISICING ELIT. SED ASPERIORES ASSUMENDA EVENIET POSSIMUS ULLAM TEMPORIBUS REICIENDIS VOLUPTAS, SAPIENTE ESSE VEL PERSPICIATIS TOTAM MAGNAM ASPERNATUR COMMODI, CONSEQUUNTUR, NEMO MOLESTIAS OBCAECATI DOLOR.';
 
 console.log(str.toLowerCase());
+
+var usrName = 'roshan';
+
+var firstChar = usrName.slice(0, 1);
+
+var upperCaseFirstChar = firstChar.toUpperCase();
+
+var restName = usrName.slice(1, usrName.length);
+
+var capitalizeName = upperCaseFirstChar + restName;
+
+console.log(capitalizeName);
