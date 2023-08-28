@@ -14,3 +14,11 @@ arr.slice(3, 10);
 console.log(arr.slice(3, 10));
 
 console.log(arr.length);
+
+const sortArr = (e, i) => {
+  return e - i;
+};
+
+var arr = [551, 23, 3, 14, 5, 6, 7, 8, 229];
+const myArr = arr.sort(sortArr);
+console.log('Shorting of array: ' + myArr);
