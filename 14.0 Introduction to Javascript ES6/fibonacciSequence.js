@@ -27,7 +27,9 @@ function fibonacciGenerator(n) {
   } else {
     output = [0, 1];
     for (var i = 2; i < n; i++) {
-      output.push(output[output.length - 2] + output[output.length - 1]);
+      output.push(output[output.length - 2] + output[output.length - 1]); // OR
+
+      //   output[i] = output[i - 1] + output[i - 2];
     }
   } //Return an array of fibonacci numbers starting from 0.
   return output;
