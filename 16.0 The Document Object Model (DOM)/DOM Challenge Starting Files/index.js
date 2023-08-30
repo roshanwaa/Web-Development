@@ -12,3 +12,6 @@ console.log(lastEle);
 const firstEle = (document.querySelector('.list a').style.color = 'red');
 
 console.log(firstEle);
+
+const changedColorBtn = document.querySelector('button');
+changedColorBtn.style.background = 'yellow';
