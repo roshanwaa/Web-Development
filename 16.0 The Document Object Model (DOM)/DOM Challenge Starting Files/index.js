@@ -2,7 +2,7 @@
 // lastChild.innerHTML = 'Roshan';
 // console.log(lastChild);
 
-document.querySelector('ul').lastElementChild.innerHTML = 'Roshan';
+// document.querySelector('ul').lastElementChild.innerHTML = 'Roshan';
 
 const lastEle = document.querySelectorAll('.list')[2];
 lastEle.innerText = 'Roshan';
