@@ -8,3 +8,7 @@ const lastEle = document.querySelectorAll('.list')[2];
 lastEle.innerText = 'Roshan';
 
 console.log(lastEle);
+
+const firstEle = (document.querySelector('.list a').style.color = 'red');
+
+console.log(firstEle);
