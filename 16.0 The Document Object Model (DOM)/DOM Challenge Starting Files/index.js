@@ -4,14 +4,11 @@
 
 // document.querySelector('ul').lastElementChild.innerHTML = 'Roshan';
 
-const lastEle = document.querySelectorAll('.list')[2];
-lastEle.innerText = 'Roshan';
-
-console.log(lastEle);
-
-const firstEle = (document.querySelector('.list a').style.color = 'red');
-
-console.log(firstEle);
-
 const changedColorBtn = document.querySelector('button');
 changedColorBtn.style.background = 'yellow';
+
+document.querySelector('#title').classList.add('huge');
+
+document.querySelectorAll('.list')[2].innerText = 'Roshan';
+
+document.querySelector('.list a').style.color = 'red';
