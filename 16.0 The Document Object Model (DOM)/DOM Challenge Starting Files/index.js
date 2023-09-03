@@ -17,13 +17,15 @@ const text = (document.querySelector('#title').innerHTML =
 console.log(text);
 
 // To get the a tag href attribute
-const getAttribute = document.querySelector('a').getAttribute('href');
+const getAttribute = document
+  .querySelector('a')
+  .getAttribute('href', 'https://www.bing.com');
 console.log(getAttribute);
 
 // const gdByeText = (document.querySelector('#title').textContent =
 //   '<em>Good Bye</em>'); // its also change the title main content  of the document
 // console.log(gdByeText);
 
-document.querySelectorAll('.list')[2].innerText = 'Roshan';
+// document.querySelectorAll('.list')[2].innerText = 'Roshan';
 
-document.querySelector('.list a').style.color = 'red';
+// document.querySelector('.list a').style.color = 'red';
