@@ -38,5 +38,32 @@ function randomDice() {
     } else {
       document.querySelector('.img2').setAttribute('src', './images/dice6.png');
     } */
-    
+
+  if (randomNumber1 < randomNumber2) {
+    // console.log('Winners: ' + randomNumber2);
+    document.querySelector('h1').innerHTML = '🥇 Player 2';
+  } else if (randomNumber1 > randomNumber2) {
+    // console.log('Winners: ' + randomNumber1);
+    document.querySelector('h1').innerHTML = '🥇 Player 1';
+  } else {
+    // console.log('Draw');
+    document.querySelector('h1').innerHTML = '🤞 Draw';
+  }
+}
+
+var animateButton = function (e) {
+  e.preventDefault;
+  //reset animation
+  e.target.classList.remove('animate');
+
+  e.target.classList.add('animate');
+  setTimeout(function () {
+    e.target.classList.remove('animate');
+  }, 700);
+};
+
+var bubblyButtons = document.getElementsByClassName('bubbly-button');
+
+for (var i = 0; i < bubblyButtons.length; i++) {
+  bubblyButtons[i].addEventListener('click', animateButton, false);
 }
