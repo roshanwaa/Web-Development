@@ -16,24 +16,31 @@ footer {
 }
 
 .w {
+  background: url('./images/tom1.png') no-repeat scroll 0 0 transparent;
 }
 
 .a {
+  background: url('./images/tom2.png') no-repeat scroll 0 0 transparent;
 }
 
 .s {
+  background: url('./images/tom3.png') no-repeat scroll 0 0 transparent;
 }
 
 .d {
+  background: url('./images/tom4.png') no-repeat scroll 0 0 transparent;
 }
 
 .j {
+  background: url('./images/snare.png') no-repeat scroll 0 0 transparent;
 }
 
 .k {
+  background: url('./images/crash.png') no-repeat scroll 0 0 transparent;
 }
 
 .l {
+  background: url('./images/kick.png') no-repeat scroll 0 0 transparent;
 }
 
 .set {
@@ -71,4 +78,17 @@ footer {
   margin: 10px;
   background-color: white;
   cursor: pointer;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.drum:hover {
+  -ms-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
 }
