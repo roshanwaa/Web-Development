@@ -22,3 +22,45 @@ function calculator(num1, num2, operator) {
 
 const result = calculator(3, 4, divide);
 console.log(result);
+
+//  || OR
+
+class HouseKeeper {
+  constructor(YOEx, name, cleaningRepertoire) {
+    this.YOEx = YOEx;
+    this.name = name;
+    this.cleaningRepertoire = cleaningRepertoire;
+  }
+}
+
+var HouseKeeper1 = new HouseKeeper(5, 'Ayush', ['lobby', 'bedroom']);
+var HouseKeeper2 = new HouseKeeper(4, 'Aqib', ['Bathroom', 'Hall']);
+var HouseKeeper3 = new HouseKeeper(5, 'Smoke', ['Guestroom']);
+console.log(HouseKeeper1, HouseKeeper2, HouseKeeper3);
+
+// ||
+function HouseKeeperFun(YOEx, name, cleaningRepertoire) {
+  this.YOEx = YOEx;
+  this.name = name;
+  this.cleaningRepertoire = cleaningRepertoire;
+}
+var HouseKeeper4 = new HouseKeeperFun(5, 'Ayush', ['Bathroom', 'Toilet']);
+var HouseKeeper5 = new HouseKeeperFun(4, 'Aqib', ['Bobby', ' Hall']);
+var HouseKeeper6 = new HouseKeeperFun(5, 'Smoke', ['Guestroom']);
+console.log(HouseKeeper4, HouseKeeper5, HouseKeeper6);
+
+// ||
+
+function HouseKeeperObjFun(YOEx, name, cleaningRepertoire) {
+  var self = {
+    YOEx,
+    name,
+    cleaningRepertoire,
+  };
+  return self;
+}
+
+var HouseKeeper_1 = new HouseKeeperObjFun(5, 'Ayush', ['lobby', 'bedroom']);
+var HouseKeeper_2 = new HouseKeeperObjFun(4, 'Aqib', ['Bathroom', 'Hall']);
+var HouseKeeper_3 = new HouseKeeperObjFun(5, 'Smoke', ['Guestroom']);
+console.log(HouseKeeper_1, HouseKeeper_2, HouseKeeper_3);
