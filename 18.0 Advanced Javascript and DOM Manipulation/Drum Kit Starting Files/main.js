@@ -1,3 +1,5 @@
+// Higher order functions : higher order functionsare functions that can take other function a output
+
 function add(num1, num2) {
   return num1 + num2;
 }
