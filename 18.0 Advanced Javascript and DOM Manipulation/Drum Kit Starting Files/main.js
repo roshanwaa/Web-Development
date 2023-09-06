@@ -64,3 +64,19 @@ var HouseKeeper_1 = new HouseKeeperObjFun(5, 'Ayush', ['lobby', 'bedroom']);
 var HouseKeeper_2 = new HouseKeeperObjFun(4, 'Aqib', ['Bathroom', 'Hall']);
 var HouseKeeper_3 = new HouseKeeperObjFun(5, 'Smoke', ['Guestroom']);
 console.log(HouseKeeper_1, HouseKeeper_2, HouseKeeper_3);
+
+var bellBoy1 = {
+  name: 'Jonny',
+  age: 34,
+  hasWorkPermission: true,
+  language: ['English', 'Hindi'],
+  MoveSuitcases: function () {
+    // console.log('May i take your Suitcases?');
+    // pickup();
+    // moveBy();
+    return 'May i take your Suitcases?';
+  },
+};
+
+const callBellBoy = bellBoy1.MoveSuitcases();
+console.log(callBellBoy);
