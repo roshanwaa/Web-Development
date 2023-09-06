@@ -80,3 +80,21 @@ var bellBoy1 = {
 
 const callBellBoy = bellBoy1.MoveSuitcases();
 console.log(callBellBoy);
+
+// Understanding Callbacks and How to Respond to Events
+
+function anotherEventListener(typeOfEvent, callback) {
+  // Detect Event Code...
+  var eventHappened = {
+    eventType: 'keyPress',
+    key: 'p',
+    duration: 1000,
+  };
+  if (eventHappened.eventType === typeOfEvent) {
+    callback(eventHappened);
+  }
+}
+
+let eventResult = anotherEventListener('keyPress', function (event) {
+  console.log(event);
+});
