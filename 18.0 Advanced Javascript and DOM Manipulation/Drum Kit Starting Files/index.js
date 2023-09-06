@@ -5,11 +5,13 @@ for (let i = 0; i < drumLength; i++) {
   document.querySelectorAll('.drum')[i].addEventListener('click', function () {
     var btnInnerHtml = this.innerHTML;
     keyPress(btnInnerHtml);
+    btnAnimation(btnInnerHtml);
   });
 }
 
 document.addEventListener('keydown', (event) => {
   keyPress(event.key);
+  btnAnimation(event.key);
 });
 
 function keyPress(key) {
@@ -45,4 +47,12 @@ function keyPress(key) {
     default:
       break;
   }
+}
+
+function btnAnimation(ev) {
+  let activeBtn = document.querySelector('.' + ev);
+  activeBtn.classList.add('pressed');
+  setTimeout(() => {
+    activeBtn.classList.remove('pressed');
+  }, 3000);
 }

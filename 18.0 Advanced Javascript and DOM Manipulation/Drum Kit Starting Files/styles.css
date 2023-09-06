@@ -85,6 +85,7 @@ footer {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
+
 .drum:hover {
   -ms-transform: scale(1.2);
   -moz-transform: scale(1.2);
