@@ -98,3 +98,18 @@ function anotherEventListener(typeOfEvent, callback) {
 let eventResult = anotherEventListener('keyPress', function (event) {
   console.log(event);
 });
+
+// function anotherEventListener(typeOfEvent, callback) {
+//   // Detect Event Code...
+//   var eventHappened = {
+//     eventType: 'keyPress',
+//     key: 'p',
+//     duration: 1000,
+//   };
+//   if (eventHappened.eventType === typeOfEvent) {
+//     return eventHappened;
+//   }
+// }
+
+// let eventResult = anotherEventListener('keyPress');
+// console.log(eventResult.key);
