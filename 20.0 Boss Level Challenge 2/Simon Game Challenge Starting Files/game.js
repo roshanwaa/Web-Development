@@ -15,18 +15,17 @@ function nextSequence() {
   let randomChosenColor = buttonColors[randomNumber];
 
   //6. Add the new randomChosenColor generated in step 4 to the end of the gamePattern.
-  return gamePattern.push(randomChosenColor);
+  gamePattern.push(randomChosenColor);
+
+  $('document').ready(function () {
+    $(`#${gamePattern}`).on('click', function () {
+      $(`#${gamePattern}`).fadeOut(100).fadeIn(100);
+      const audioElement = new Audio(`./sounds/${gamePattern}.mp3`);
+      audioElement.play();
+    });
+  });
 }
 
 nextSequence();
-// console.log(nextSequence());
-console.log(gamePattern);
 
-$('document').ready(function () {
-  $(`#${gamePattern}`).on('click', function () {
-    $(`#${gamePattern}`).fadeOut(100);
-    $(`#${gamePattern}`).fadeIn(100);
-    const audioElement = new Audio(`./sounds/${gamePattern}.mp3`);
-    audioElement.play();
-  });
-});
+console.log(gamePattern);
