@@ -1,5 +1,13 @@
 $(document).ready(function () {
-  $('h1').css('color', 'red');
+  $('h1').addClass('big-Title');
+  $('button').addClass('button -regular');
+  $('h1').css('color', ' #ff8181');
+  // To Remove the Big Title class :-
+  // $('h1').removeClass('big-Title');
+
+  // To check the class has Iin button or not:-
+  const hasClass = $('button').hasClass('-regular');
+  console.log(hasClass); // true
 });
 
 // Selecting Elements
