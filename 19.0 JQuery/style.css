@@ -3,4 +3,23 @@ body {
   padding: 0;
   background-color: bisque;
   color: black;
+  font-family: 'Mukta', sans-serif;
+  min-height: 100vh;
+}
+.big-Title {
+  font-size: 5rem;
+  color: #ff8181;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.button {
+  font-size: 1rem;
+  background: #ff8181;
+  height: 50px;
+  width: 100px;
+  border: transparent;
+  margin: 0 auto;
+  cursor: pointer;
+  border-radius: 12px;
 }
