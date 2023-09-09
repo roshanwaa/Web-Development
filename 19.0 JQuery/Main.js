@@ -29,8 +29,19 @@ $(document).ready(function () {
   });
   // Change the h1 text to keyPress
   $(document).keypress(function (event) {
-    console.log(event.key);
-    $('h1').text(event.key);
+    console.log(...event.key);
+    $('h1').text(...event.key);
+  });
+
+  // show and toggle buttons
+  $('button').click(function () {
+    // $('h1').hide();
+    // $('h1').toggle();
+    // $('h1').fadeOut();
+    // $('h1').fadeToggle();
+    // $('h1').slideUp();
+    // $('h1').slideDown();
+    $('h1').slideToggle();
   });
 });
 

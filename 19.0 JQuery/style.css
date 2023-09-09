@@ -20,6 +20,9 @@ body {
   color: black;
   font-family: 'Mukta', sans-serif;
   min-height: 100vh;
+  transition: all 150ms ease-in;
+  /* position: absolute; */
+  text-align: center;
 }
 .big-Title {
   font-size: 5rem;
