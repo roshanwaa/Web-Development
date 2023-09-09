@@ -18,6 +18,20 @@ $(document).ready(function () {
 
   // check class name of any tag
   $('a').attr('class');
+
+  // Add Event Listener to the page
+  $('h1').click(function () {
+    $('h1').removeClass('big-Title');
+  });
+
+  $('button').click(function () {
+    $('h1').css('color', 'green');
+  });
+  // Change the h1 text to keyPress
+  $(document).keypress(function (event) {
+    console.log(event.key);
+    $('h1').text(event.key);
+  });
 });
 
 // Selecting Elements
