@@ -12,6 +12,12 @@ $(document).ready(function () {
   // Change the text title
   // $('h1').text('<em>Bye</em>'); // Its Not working
   $('h1').text('Bye');
+
+  // add link to the a tag list
+  $('a').attr('href', 'www.example.com');
+
+  // check class name of any tag
+  $('a').attr('class');
 });
 
 // Selecting Elements
