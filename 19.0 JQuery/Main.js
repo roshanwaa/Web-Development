@@ -8,6 +8,9 @@ $(document).ready(function () {
   // To check the class has Iin button or not:-
   const hasClass = $('button').hasClass('-regular');
   console.log(hasClass); // true
+
+  // Change the text title
+  $('h1').text('Bye');
 });
 
 // Selecting Elements
