@@ -10,7 +10,8 @@ $(document).ready(function () {
   console.log(hasClass); // true
 
   // Change the text title
-  $('h1').text('<em>Bye</em>');
+  // $('h1').text('<em>Bye</em>'); // Its Not working
+  $('h1').text('Bye');
 });
 
 // Selecting Elements
