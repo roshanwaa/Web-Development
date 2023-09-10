@@ -21,10 +21,12 @@ function nextSequence() {
   gamePattern.push(randomChosenColor);
 
   $('document').ready(function () {
-    $(`#${gamePattern}`).on('click', function () {
+    $(`#${gamePattern}`).on('click', function (ele) {
       $(`#${gamePattern}`).fadeOut(100).fadeIn(100);
-      const audioElement = new Audio(`./sounds/${gamePattern}.mp3`);
-      audioElement.play();
+      console.log(ele);
+
+      // playSound($(this).attr('id'));
+      playSound(ele.target.id);
     });
   });
 }
@@ -37,6 +39,12 @@ $(`.btn`).click(function (ele) {
   console.log(userClickedPattern);
 });
 
-// nextSequence();
+function playSound(ele) {
+  // console.log(ele);
+  const audioElement = new Audio(`./sounds/${ele}.mp3`);
+  audioElement.play();
+}
+
+nextSequence();
 
 console.log(gamePattern);
