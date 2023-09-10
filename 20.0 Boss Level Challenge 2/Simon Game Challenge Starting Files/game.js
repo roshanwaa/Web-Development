@@ -29,12 +29,14 @@ function nextSequence() {
   });
 }
 
-$(`#${gamePattern}`).click(function () {
+$(`.btn`).click(function (ele) {
+  // let userChosenColor = ele.target.id;
+
   let userChosenColor = $(this).attr('id');
   userClickedPattern.push(userChosenColor);
   console.log(userClickedPattern);
 });
 
-nextSequence();
+// nextSequence();
 
 console.log(gamePattern);
