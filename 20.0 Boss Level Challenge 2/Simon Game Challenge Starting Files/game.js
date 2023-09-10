@@ -4,6 +4,9 @@ let buttonColors = ['red', 'blue', 'green', 'yellow'];
 //5. At the top of the game.js file, create a new empty array called gamePattern.
 let gamePattern = [];
 
+// 3. At the top of the game.js file, create a new empty array with the name userClickedPattern.
+let userClickedPattern = [];
+
 function nextSequence() {
   //2. Inside the new function generate a new random number between 0 and 3, and store it in a variable called randomNumber
 
@@ -25,6 +28,12 @@ function nextSequence() {
     });
   });
 }
+
+$(`#${gamePattern}`).click(function () {
+  let userChosenColor = $(this).attr('id');
+  userClickedPattern.push(userChosenColor);
+  console.log(userClickedPattern);
+});
 
 nextSequence();
 
