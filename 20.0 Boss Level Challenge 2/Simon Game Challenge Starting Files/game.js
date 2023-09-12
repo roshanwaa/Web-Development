@@ -20,15 +20,14 @@ function nextSequence() {
   //6. Add the new randomChosenColor generated in step 4 to the end of the gamePattern.
   gamePattern.push(randomChosenColor);
 
-  $('document').ready(function () {
-    $(`#${gamePattern}`).on('click', function (ele) {
-      $(`#${gamePattern}`).fadeOut(100).fadeIn(100);
-      console.log(ele);
+  // $('document').ready(function () {
+  // $(`#${gamePattern}`).on('click', function (ele) {
+  $(`#${randomChosenColor}`).fadeIn(100).fadeOut(100).fadeIn(100);
 
-      // playSound($(this).attr('id'));
-      playSound(ele.target.id);
-    });
-  });
+  playSound(randomChosenColor);
+  // playSound(ele.target.id);
+  // });
+  // });
 }
 
 $(`.btn`).click(function (ele) {
@@ -36,12 +35,15 @@ $(`.btn`).click(function (ele) {
 
   let userChosenColor = $(this).attr('id');
   userClickedPattern.push(userChosenColor);
-  console.log(userClickedPattern);
+  playSound(userChosenColor);
+  // playSound(ele.target.id);
+
+  // console.log(userClickedPattern);
 });
 
 function playSound(ele) {
-  // console.log(ele);
-  const audioElement = new Audio(`./sounds/${ele}.mp3`);
+  console.log(ele);
+  var audioElement = new Audio(`./sounds/${ele}.mp3`);
   audioElement.play();
 }
 
