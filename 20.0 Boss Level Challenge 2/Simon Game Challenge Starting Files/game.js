@@ -18,6 +18,8 @@ function nextSequence() {
   $(`#${randomChosenColor}`).fadeIn(100).fadeOut(100).fadeIn(100);
   level++;
   $('#level-title').text('Level ' + level);
+
+  userClickedPattern = [];
   playSound(randomChosenColor);
   animatePress(randomChosenColor);
 }
@@ -60,7 +62,6 @@ function checkAnswer(currentLevel) {
     if (userClickedPattern.length === gamePattern.length) {
       setTimeout(function () {
         nextSequence();
-        userClickedPattern = [];
       }, 1000);
     }
   } else {
