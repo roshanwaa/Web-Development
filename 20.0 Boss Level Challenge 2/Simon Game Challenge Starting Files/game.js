@@ -25,6 +25,7 @@ function nextSequence() {
   $(`#${randomChosenColor}`).fadeIn(100).fadeOut(100).fadeIn(100);
 
   playSound(randomChosenColor);
+  animatePress(userChosenColor);
   // playSound(ele.target.id);
   // });
   // });
@@ -37,7 +38,7 @@ $(`.btn`).click(function (ele) {
   userClickedPattern.push(userChosenColor);
   playSound(userChosenColor);
   // playSound(ele.target.id);
-
+  animatePress(userChosenColor);
   // console.log(userClickedPattern);
 });
 
@@ -45,6 +46,14 @@ function playSound(ele) {
   console.log(ele);
   var audioElement = new Audio(`./sounds/${ele}.mp3`);
   audioElement.play();
+}
+
+function animatePress(currentColour) {
+  $(`.${currentColour}`).addClass('pressed');
+
+  setTimeout(function () {
+    $(`.${currentColour}`).removeClass('pressed');
+  }, 100);
 }
 
 nextSequence();
