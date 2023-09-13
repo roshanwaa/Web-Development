@@ -49,13 +49,13 @@ function playSound(ele) {
 }
 
 function animatePress(currentColour) {
-  $(`.${currentColour}`).addClass('pressed');
+  $(`#${currentColour}`).addClass('pressed');
 
   setTimeout(function () {
-    $(`.${currentColour}`).removeClass('pressed');
+    $(`#${currentColour}`).removeClass('pressed');
   }, 100);
 }
 
-nextSequence();
+// nextSequence();
 
 console.log(gamePattern);
