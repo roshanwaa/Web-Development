@@ -1,45 +1,33 @@
-//3. At the top of the game.js file, create a new array called buttonColors and set it to hold the sequence "red", "blue", "green", "yellow" .
 let buttonColors = ['red', 'blue', 'green', 'yellow'];
 
-//5. At the top of the game.js file, create a new empty array called gamePattern.
 let gamePattern = [];
 
-// 3. At the top of the game.js file, create a new empty array with the name userClickedPattern.
 let userClickedPattern = [];
 
-function nextSequence() {
-  //2. Inside the new function generate a new random number between 0 and 3, and store it in a variable called randomNumber
+let level = 0;
 
-  //   let randomNumber =
-  //     buttonColors[Math.floor(Math.random() * buttonColors.length)];
+let started = false;
+
+function nextSequence() {
   let randomNumber = Math.floor(Math.random() * 4);
 
-  //4. Create a new variable called randomChosenColor and use the randomNumber from step 2 to select a random color from the buttonColors array.
   let randomChosenColor = buttonColors[randomNumber];
 
-  //6. Add the new randomChosenColor generated in step 4 to the end of the gamePattern.
   gamePattern.push(randomChosenColor);
 
-  // $('document').ready(function () {
-  // $(`#${gamePattern}`).on('click', function (ele) {
   $(`#${randomChosenColor}`).fadeIn(100).fadeOut(100).fadeIn(100);
-
+  level++;
+  $('h1').text('Level ' + level);
   playSound(randomChosenColor);
-  animatePress(userChosenColor);
-  // playSound(ele.target.id);
-  // });
-  // });
+  animatePress(randomChosenColor);
 }
 
 $(`.btn`).click(function (ele) {
-  // let userChosenColor = ele.target.id;
-
   let userChosenColor = $(this).attr('id');
   userClickedPattern.push(userChosenColor);
   playSound(userChosenColor);
-  // playSound(ele.target.id);
+
   animatePress(userChosenColor);
-  // console.log(userClickedPattern);
 });
 
 function playSound(ele) {
@@ -56,6 +44,13 @@ function animatePress(currentColour) {
   }, 100);
 }
 
-// nextSequence();
+$(document).keypress(function () {
+  if (!started) {
+    // Hint 1: Check if the game has started
+    nextSequence();
+    started = true; // Set the game as started
+    $('h1').text('Level ' + level); // Hint 3: Update the h1 text
+  }
+});
 
 console.log(gamePattern);
