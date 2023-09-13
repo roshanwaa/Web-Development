@@ -17,7 +17,7 @@ function nextSequence() {
 
   $(`#${randomChosenColor}`).fadeIn(100).fadeOut(100).fadeIn(100);
   level++;
-  $('h1').text('Level ' + level);
+  $('#level-title').text('Level ' + level);
   playSound(randomChosenColor);
   animatePress(randomChosenColor);
 }
@@ -49,7 +49,7 @@ $(document).keypress(function () {
     // Hint 1: Check if the game has started
     nextSequence();
     started = true; // Set the game as started
-    $('h1').text('Level ' + level); // Hint 3: Update the h1 text
+    $('#level-title').text('Level ' + level); // Hint 3: Update the h1 text
   }
 });
 
