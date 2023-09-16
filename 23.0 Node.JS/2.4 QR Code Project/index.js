@@ -6,17 +6,31 @@
 
 import fs from 'fs';
 import qr from 'qr-image';
+import inquirer from 'inquirer';
 
-let url = fs.readFile('./URL.txt', 'utf8', (err, data) => {
-  if (err) {
-    console.log(err);
-    return;
-  }
-  console.log(data);
-});
+const randomNumber = Math.floor(Math.random() * 100 + 1);
 
-var qr_svg = qr.image(url, { type: 'svg' });
-qr_svg.pipe(require('fs').createWriteStream('i_love_qr.svg'));
+inquirer
+  .prompt([
+    {
+      message: 'Please enter your URL: ',
+      name: 'URL',
+    },
+  ])
+  .then((answers) => {
+    // Use user feedback for... whatever!!
+    const url = answers.URL;
+    var qr_svg = qr.image(url);
+    qr_svg.pipe(fs.createWriteStream(`qr_${url + randomNumber}.png`));
 
-var svg_string = qr.imageSync(url, { type: 'svg' });
-console.log(svg_string);
+    fs.writeFile('./URL.txt', url, (err) => {
+      if (err) throw err;
+    });
+  })
+  .catch((error) => {
+    if (error.isTtyError) {
+      console.log(error);
+    } else {
+      console.log('Successfully rendered');
+    }
+  });
