@@ -1,4 +1,4 @@
-import express from "express";
+import express from 'express';
 const app = express();
 const port = 3000;
 
@@ -9,24 +9,24 @@ const port = 3000;
 // You should not get any 404s or 500 status codes.
 // *********************
 
-app.get("/", (req, res) => {
-  res.send("<h1>Home Page</h1>");
+app.get('/', (req, res) => {
+  res.send('<h1>Home Page</h1>');
 });
 
-app.post("/register", (req, res) => {
+app.post('/register', (req, res) => {
   //Do something with the data
   res.sendStatus(201);
 });
 
-app.put("/user/angela", (req, res) => {
+app.put('/user/angela', (req, res) => {
   res.sendStatus(200);
 });
 
-app.patch("/user/angela", (req, res) => {
+app.patch('/user/angela', (req, res) => {
   res.sendStatus(200);
 });
 
-app.delete("/user/angela", (req, res) => {
+app.delete('/user/angela', (req, res) => {
   //Deleting
   res.sendStatus(200);
 });
