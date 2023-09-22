@@ -1,0 +1,1 @@
+EJS simply stands for Embedded Javascript. It is a simple template language/engine that lets its user generate HTML with plain javascript.
