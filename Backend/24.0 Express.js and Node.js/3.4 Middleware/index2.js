@@ -4,7 +4,7 @@ import morgan from 'morgan';
 const app = express();
 const port = 3000;
 
-app.use(morgan('combined'));
+app.use(morgan('tiny')); // log = GET / 304 - - 6.836 ms
 
 app.get('/', (req, res) => {
   res.send('Hello');
