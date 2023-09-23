@@ -1,4 +1,4 @@
-EJS simply stands for Embedded Javascript. It is a simple template language/engine that lets its user generate HTML with plain javascript.
+EJS simply stands for Embedded Javascript. It is a simple template language/engine that lets its user generate HTML with plain javascript. No religiousness about how to organize things. No reinvention of iteration and control-flow. It's just plain JavaScript.
 
 -------------------------- Tags --------------------------
 -> <% 'Scriptlet' tag, for control-flow, no output
