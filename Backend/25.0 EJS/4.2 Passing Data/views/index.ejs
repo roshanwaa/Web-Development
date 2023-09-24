@@ -9,9 +9,14 @@
   <body>
     <!-- Write your code here -->
     <form action="/submit" method="POST">
+      <% if(locals.nameLength){%>
+      <h1>There is <%= nameLength %> letters in your name</h1>
+      <button><a href="/">Back to Page</a></button>
+      <% }else if(!locals.nameLength){%>
       <input type="text" name="fName" placeholder="First name" />
       <input type="text" name="lName" placeholder="Last name" />
       <input type="submit" value="OK" />
+      <% } %>
     </form>
   </body>
 </html>
