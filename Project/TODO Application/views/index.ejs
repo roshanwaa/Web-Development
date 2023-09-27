@@ -3,9 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TODO List Application</title>
+    <link rel="stylesheet" href="/styles/style.css" />
+    <title>My Todo App</title>
   </head>
+
   <body>
-    <h1>Hello World</h1>
+    <main class="container">
+      <h1>My Todo App</h1>
+      <h2>Day's Tasks</h2>
+      <ul>
+        <% tasks.day.forEach((task, index)=> { %>
+        <li>
+          <input type="checkbox" name="done" value="true" />
+          <h3 class="<%= task.includes('<s>') ? 'completed' : '' %>">
+            <%= task %>
+          </h3>
+          <button
+            type="submit"
+            form="deleteTaskFormDay"
+            name="index"
+            value="<%= index %>">
+            Delete
+          </button>
+        </li>
+        <% }); %>
+      </ul>
+      <form action="/deleteTask" method="post" id="deleteTaskFormDay">
+        <input type="hidden" name="list" value="day" />
+      </form>
+
+      <h2>Work Tasks</h2>
+      <ul>
+        <% tasks.work.forEach((task, index)=> { %>
+        <li>
+          <input type="checkbox" name="done" value="true" />
+          <h3 class="<%= task.includes('<s>') ? 'completed' : '' %>">
+            <%= task %>
+          </h3>
+          <button
+            type="submit"
+            form="deleteTaskFormWork"
+            name="index"
+            value="<%= index %>">
+            Delete
+          </button>
+        </li>
+        <% }); %>
+      </ul>
+      <form action="/deleteTask" method="post" id="deleteTaskFormWork">
+        <input type="hidden" name="list" value="work" />
+      </form>
+
+      <h2>Add New Task</h2>
+      <form action="/addTask" method="post">
+        <input type="text" name="task" placeholder="Task" />
+        <select name="list">
+          <option value="day">Day</option>
+          <option value="work">Work</option>
+        </select>
+        <button type="submit">Add</button>
+      </form>
+    </main>
   </body>
 </html>
