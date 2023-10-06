@@ -32,7 +32,6 @@ app.get('/noAuth', async (req, res) => {
 
   res.render('index.ejs', { content: JSON.stringify(resData) });
 
-  res.redirect('/');
   //The data you get back should be sent to the ejs file as "content"
   //Hint: make sure you use JSON.stringify to turn the JS object from axios into a string.
 });
@@ -51,14 +50,18 @@ app.get('/basicAuth', async (req, res) => {
     });
   */
   await axios
-    .get(`${API_URL}all?page=2`, {
-      auth: {
-        yourUsername,
-        yourPassword,
-      },
-    })
-    .then((res) => {
-      res.render('index.ejs', { content: JSON.stringify(resData) });
+    .get(
+      `${API_URL}all?page=2`,
+
+      {
+        auth: {
+          username: yourUsername,
+          password: yourPassword,
+        },
+      }
+    )
+    .then((resData) => {
+      res.render('index.ejs', { content: JSON.stringify(resData.data) });
     })
     .catch((err) => {
       res.status(404).send(err.message);
