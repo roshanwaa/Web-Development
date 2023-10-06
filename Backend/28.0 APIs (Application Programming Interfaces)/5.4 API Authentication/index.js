@@ -1,5 +1,5 @@
 import express from 'express';
-import axios from 'axios';
+import axios, { Axios } from 'axios';
 
 const app = express();
 const port = 3000;
@@ -28,7 +28,7 @@ app.get('/noAuth', async (req, res) => {
     .catch((err) => {
       throw err;
     });
-  console.log(resData);
+  // console.log(resData);
 
   res.render('index.ejs', { content: JSON.stringify(resData) });
 
@@ -37,7 +37,7 @@ app.get('/noAuth', async (req, res) => {
   //Hint: make sure you use JSON.stringify to turn the JS object from axios into a string.
 });
 
-app.get('/basicAuth', (req, res) => {
+app.get('/basicAuth', async (req, res) => {
   //TODO 3: Write your code here to hit up the /all endpoint
   //Specify that you only want the secrets from page 2
   //HINT: This is how you can use axios to do basic auth:
@@ -50,6 +50,36 @@ app.get('/basicAuth', (req, res) => {
       },
     });
   */
+  const resData = await axios
+    .get(`${API_URL}all?page=2`, {
+      auth: {
+        yourUsername,
+        yourPassword,
+      },
+    })
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => {
+      return err.message;
+    });
+
+  res.render('index.ejs', { content: JSON.stringify(resData) });
+
+  res.redirect('/');
+
+  // try {
+  //   const resData = await axios.get(`${API_URL}all`, {
+  //     auth: {
+  //       yourUsername,
+  //       yourPassword,
+  //     },
+  //   });
+
+  //   res.render('index.ejs', { content: JSON.stringify(resData) });
+  // } catch (error) {
+  //   res.render('index.ejs', { content: JSON.stringify(error.message) });
+  // }
 });
 
 app.get('/apiKey', (req, res) => {
