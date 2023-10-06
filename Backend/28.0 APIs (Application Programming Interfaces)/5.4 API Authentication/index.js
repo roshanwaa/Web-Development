@@ -50,7 +50,7 @@ app.get('/basicAuth', async (req, res) => {
       },
     });
   */
-  const resData = await axios
+  await axios
     .get(`${API_URL}all?page=2`, {
       auth: {
         yourUsername,
@@ -58,15 +58,11 @@ app.get('/basicAuth', async (req, res) => {
       },
     })
     .then((res) => {
-      return res.data;
+      res.render('index.ejs', { content: JSON.stringify(resData) });
     })
     .catch((err) => {
-      return err.message;
+      res.status(404).send(err.message);
     });
-
-  res.render('index.ejs', { content: JSON.stringify(resData) });
-
-  res.redirect('/');
 
   // try {
   //   const resData = await axios.get(`${API_URL}all`, {
@@ -82,9 +78,24 @@ app.get('/basicAuth', async (req, res) => {
   // }
 });
 
-app.get('/apiKey', (req, res) => {
+app.get('/apiKey', async (req, res) => {
   //TODO 4: Write your code here to hit up the /filter endpoint
-  //Filter for all secrets with an embarassment score of 5 or greater
+  //Filter for all secrets with an embarrassment score of 5 or greater
+
+  await axios
+    .get(`${API_URL}filter`, {
+      params: {
+        score: 5,
+        apiKey: yourAPIKey,
+      },
+    })
+    .then((resData) => {
+      res.render('index.ejs', { content: JSON.stringify(resData.data) });
+    })
+    .catch((err) => {
+      res.status(404).send(err.message);
+    });
+
   //HINT: You need to provide a query parameter of apiKey in the request.
 });
 
