@@ -20,7 +20,7 @@ const config = {
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-  res.render('index.ejs', { content: 'Waiting for data...' });
+  res.render('index.ejs', { hello: 'Waiting for data...' });
 });
 
 app.post('/get-secret', async (req, res) => {
@@ -68,7 +68,7 @@ app.post('/patch-secret', async (req, res) => {
   // TODO 4: Use axios to PATCH the data from req.body to the secrets api servers.
   let data = req.body;
   await axios
-    .patch(`${API_URL}/secrets/${searchId}`, { data }, { config })
+    .patch(`${API_URL}/secrets/${searchId}`, data, config)
     .then((resData) => {
       res.render('index.ejs', { content: resData.data });
     })
@@ -80,6 +80,17 @@ app.post('/patch-secret', async (req, res) => {
 app.post('/delete-secret', async (req, res) => {
   const searchId = req.body.id;
   // TODO 5: Use axios to DELETE the item with searchId from the secrets api servers.
+
+  let data = req.body;
+
+  await axios
+    .delete(`${API_URL}/secrets/${searchId}`, data, config)
+    .then(() => {
+      res.render('index.ejs', { dataDel: 'Delete Data... ' });
+    })
+    .catch((error) => {
+      res.render('index.ejs', { error: error.response.data });
+    });
 });
 
 app.listen(port, () => {
