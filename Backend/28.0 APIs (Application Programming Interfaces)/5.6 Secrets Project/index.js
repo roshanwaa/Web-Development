@@ -27,6 +27,7 @@ app.get('/', async (req, res) => {
         secret: 'Data not found',
         user: 'Unknown',
       });
+      res.status(500);
     });
 });
 
