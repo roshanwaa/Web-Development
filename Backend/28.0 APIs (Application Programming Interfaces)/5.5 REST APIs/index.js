@@ -43,13 +43,24 @@ app.post('/post-secret', async (req, res) => {
       res.render('index.ejs', { content: resData.data });
     })
     .catch((error) => {
-      throw error.message;
+      res.render('index.ejs', { error: error.response.data });
     });
 });
 
 app.post('/put-secret', async (req, res) => {
   const searchId = req.body.id;
   // TODO 3: Use axios to PUT the data from req.body to the secrets api servers.
+
+  const data = req.body;
+
+  await axios
+    .put(`${API_URL}/secrets/${searchId}`, data, config)
+    .then((resData) => {
+      res.render('index.ejs', { content: resData.data });
+    })
+    .catch((error) => {
+      res.render('index.ejs', { error: error.response.data });
+    });
 });
 
 app.post('/patch-secret', async (req, res) => {
