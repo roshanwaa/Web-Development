@@ -110,7 +110,7 @@ app.delete('/all', (req, res) => {
   } else {
     res
       .status(404)
-      .json({ error: `You are not authorised to perform this action.` });
+      .json({ error: `You are not authorized to perform this action.` });
   }
 });
 
