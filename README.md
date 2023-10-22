@@ -66,7 +66,7 @@ This course is open source and available under the [MIT License](LICENSE).
 ## My Self
 
 - Roshan Kumar
-- [Your LinkedIn Profile](https://www.linkedin.com/in/roshanwaa)
+- [LinkedIn Profile](https://www.linkedin.com/in/roshanwaa)
 - Email: kumroshan120@gmail.com
 
 
