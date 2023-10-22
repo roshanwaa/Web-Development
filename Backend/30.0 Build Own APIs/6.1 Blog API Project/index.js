@@ -42,7 +42,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //CHALLENGE 1: GET All posts
 app.get('/posts', (req, res) => {
-  console.log(posts);
+  // console.log(posts);
   res.json(posts);
 });
 //CHALLENGE 2: GET a specific post by id
