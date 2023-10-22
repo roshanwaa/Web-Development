@@ -59,8 +59,6 @@ app.get('/posts/:id', (req, res) => {
 
 //CHALLENGE 3: POST a new post
 app.post('/posts/', (req, res) => {
-  const id = parseInt(req.params.id);
-
   const newPost = {
     id: posts.length + 1,
     title: req.body.title,
@@ -73,7 +71,32 @@ app.post('/posts/', (req, res) => {
   res.status(201).json(newPost);
 });
 //CHALLENGE 4: PATCH a post when you just want to update one parameter
+app.patch('/posts/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const existPost = posts.find((post) => post.id === id);
+  if (!existPost) {
+    return res.status(404).json({ message: 'Post not found' });
+  }
 
+  // const updatePost = {
+  //   id: existPost,
+  //   title: req.body.title || existPost.title,
+  //   content: req.body.content || existPost.content,
+  //   author: req.body.author || existPost.author,
+  //   date: new Date(),
+  // };
+
+  // const searchPost = posts.findIndex((post) => {
+  //   post.id === id;
+  // });
+  // posts[searchPost] = updatePost;
+
+  if (req.body.title) existPost.title = req.body.title;
+  if (req.body.content) existPost.content = req.body.content;
+  if (req.body.author) existPost.author = req.body.author;
+
+  res.json(existPost);
+});
 //CHALLENGE 5: DELETE a specific post by providing the post id.
 
 app.listen(port, () => {
