@@ -48,3 +48,8 @@ The ALTER TABLE statement is also used to add and drop various constraints on an
  */
 ALTER TABLE product
 ADD stock INT
+
+
+-- TODO:  SQL Commands: DELETE
+DELETE FROM product
+WHERE  id = 5
