@@ -16,4 +16,5 @@ VALUES(3, "Book", 10.0)
 -- TRIGGER
  
 -- VIEW
- 
+-- Show the table 
+ SELECT * FROM product 
