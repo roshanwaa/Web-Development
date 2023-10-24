@@ -11,6 +11,8 @@ CREATE TABLE product(
 -- INSERT product to the database
 INSERT INTO product
 VALUES(1, "Pen", 2.0)
+VALUES(2, "Copy", 7.0)
+VALUES(3, "Book", 10.0)
 -- TRIGGER
  
 -- VIEW
