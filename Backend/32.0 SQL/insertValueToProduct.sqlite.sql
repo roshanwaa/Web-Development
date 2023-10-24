@@ -34,3 +34,11 @@ WHERE id=1
 UPDATE product
 set price = 0.8
 WHERE id = 4
+
+/* =SQL ALTER TABLE Statement
+The ALTER TABLE statement is used to add, delete, or modify columns in an existing table.
+OR 
+The ALTER TABLE statement is also used to add and drop various constraints on an existing table.
+ */
+ALTER TABLE product
+ADD stock INT
