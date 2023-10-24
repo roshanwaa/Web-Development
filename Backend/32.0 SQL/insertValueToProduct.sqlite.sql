@@ -1,3 +1,5 @@
+-- TODO: SQL Commands: CREATE Table and INSERT Data
+
 -- TABLE
 CREATE TABLE demo (ID integer primary key, Name varchar(20), Hint text );
 CREATE TABLE product(
@@ -19,6 +21,8 @@ INSERT INTO product(id, Name)
 VALUES(4, "Book")
 -- TRIGGER
  
+
+--  TODO: SQL Commands: READ, SELECT, and WHERE
 -- VIEW
 -- Show the whole table 
  SELECT * FROM product 
@@ -35,6 +39,8 @@ UPDATE product
 set price = 0.8
 WHERE id = 4
 
+
+-- TODO: Updating Single Values and Adding Columns in SQL
 /* =SQL ALTER TABLE Statement
 The ALTER TABLE statement is used to add, delete, or modify columns in an existing table.
 OR 
