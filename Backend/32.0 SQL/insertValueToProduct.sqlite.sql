@@ -21,3 +21,7 @@ VALUES(3, "Book", 10.0)
 
 -- Show the specific name and price table 
 SELECT name, price  FROM 'product' 
+
+-- Show the specific id of table 
+SELECT * FROM product 
+WHERE id=1
