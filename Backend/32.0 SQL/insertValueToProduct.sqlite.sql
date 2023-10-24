@@ -16,5 +16,8 @@ VALUES(3, "Book", 10.0)
 -- TRIGGER
  
 -- VIEW
--- Show the table 
+-- Show the whole table 
  SELECT * FROM product 
+
+-- Show the specific name and price table 
+SELECT name, price  FROM 'product' 
