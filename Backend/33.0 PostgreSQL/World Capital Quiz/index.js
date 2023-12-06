@@ -9,17 +9,13 @@ const db = new pg.Client({
   user: 'postgres',
   host: 'localhost',
   database: 'World',
-  password: 'kumar@789',
+  password: '1100',
   port: 5432,
 });
 
 db.connect();
 
-let quiz = [
-  { country: 'France', capital: 'Paris' },
-  { country: 'United Kingdom', capital: 'London' },
-  { country: 'United States of America', capital: 'New York' },
-];
+let quiz = [];
 
 db.query('SELECT * FROM capitals', (err, res) => {
   if (err) {
