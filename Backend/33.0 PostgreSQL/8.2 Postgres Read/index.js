@@ -5,8 +5,8 @@ import pg from 'pg';
 const db = new pg.Client({
   user: 'postgres',
   host: 'localhost',
-  database: 'World',
-  password: 'kumar@789',
+  database: 'world',
+  password: '1100',
   port: 5432,
 });
 
@@ -42,8 +42,8 @@ app.get('/', (req, res) => {
 app.post('/submit', (req, res) => {
   let answer = req.body.answer.trim();
   let isCorrect = false;
-  // console.log(currentQuestion.country, answer);
-  if (currentQuestion.country.toLowerCase() === answer.toLowerCase()) {
+  console.log(currentQuestion.name, answer);
+  if (currentQuestion.name.toLowerCase() === answer.toLowerCase()) {
     totalCorrect++;
     console.log(totalCorrect);
     isCorrect = true;
