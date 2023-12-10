@@ -34,7 +34,29 @@ app.get('/', async (req, res) => {
   // }
 
   res.render('index.ejs', { countries: countries, total: result.rows.length });
-  db.end();
+});
+
+app.post('/add', async (req, res) => {
+  const country = req.body.country;
+
+  try {
+    const getCountriesData = await db.query('SELECT * FROM public.countries');
+
+    getCountriesData.rows.forEach(async (row) => {
+      if (row.country_name === country) {
+        // Use asynchronous version of db.query and await the result
+        await db.query(
+          'INSERT INTO visited_country (country_code) VALUES ($1)',
+          [row.country_code]
+        );
+      }
+    });
+
+    res.redirect('/');
+  } catch (error) {
+    console.error('Error adding data:', error);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
 app.listen(port, () => {
