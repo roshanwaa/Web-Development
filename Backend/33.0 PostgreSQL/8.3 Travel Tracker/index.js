@@ -18,44 +18,38 @@ db.connect();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-app.get('/', async (req, res) => {
-  //Write your code here.
-
+async function checkVisited() {
   const result = await db.query('SELECT country_code FROM visited_country');
+
   let countries = [];
-
-  result.rows.forEach((row) => {
-    countries.push(row.country_code);
+  result.rows.forEach((country) => {
+    countries.push(country.country_code);
   });
+  return countries;
+}
 
-  // for (let i = 0; i < result.rows.length; i++) {
-  //   countries.push(result.rows[i].country_code);
-  //   // console.log(result.rows[i].country_code);
-  // }
-
-  res.render('index.ejs', { countries: countries, total: result.rows.length });
+// GET home page
+app.get('/', async (req, res) => {
+  const countries = await checkVisited();
+  res.render('index.ejs', { countries: countries, total: countries.length });
 });
 
 app.post('/add', async (req, res) => {
-  const country = req.body.country;
+  const input = req.body['country'];
 
-  try {
-    const getCountriesData = await db.query('SELECT * FROM public.countries');
+  const result = await db.query(
+    'SELECT country_code FROM countries WHERE country_name = $1',
+    [input]
+  );
 
-    getCountriesData.rows.forEach(async (row) => {
-      if (row.country_name === country) {
-        // Use asynchronous version of db.query and await the result
-        await db.query(
-          'INSERT INTO visited_country (country_code) VALUES ($1)',
-          [row.country_code]
-        );
-      }
-    });
+  if (result.rows.length !== 0) {
+    const data = result.rows[0];
+    const countryCode = data.country_code;
 
+    await db.query('INSERT INTO visited_country (country_code) VALUES ($1)', [
+      countryCode,
+    ]);
     res.redirect('/');
-  } catch (error) {
-    console.error('Error adding data:', error);
-    res.status(500).send('Internal Server Error');
   }
 });
 
