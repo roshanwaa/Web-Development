@@ -38,7 +38,18 @@ app.get('/', async (req, res) => {
   }
 });
 
-app.post('/add', async (req, res) => {});
+app.post('/add', async (req, res) => {
+  try {
+    const item = req.body.newItem;
+
+    await db.query('INSERT INTO items  (title) VALUES ($1)', [item]);
+
+    items.push({ title: item });
+    res.redirect('/');
+  } catch (error) {
+    console.log(error);
+  }
+});
 
 app.post('/edit', (req, res) => {});
 
