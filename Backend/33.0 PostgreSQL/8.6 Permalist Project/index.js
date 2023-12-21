@@ -17,9 +17,6 @@ db.connect();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-let myItems = db.query('SELECT * FROM items');
-console.log(myItems);
-
 let items = [];
 
 app.get('/', async (req, res) => {
@@ -27,7 +24,7 @@ app.get('/', async (req, res) => {
     let allItems = await db.query('SELECT * FROM items ORDER BY id ASC');
 
     items = allItems.rows;
-    console.log(items);
+    // console.log(items);
 
     res.render('index.ejs', {
       listTitle: 'Today',
@@ -39,9 +36,8 @@ app.get('/', async (req, res) => {
 });
 
 app.post('/add', async (req, res) => {
+  const item = req.body.newItem;
   try {
-    const item = req.body.newItem;
-
     await db.query('INSERT INTO items  (title) VALUES ($1)', [item]);
 
     items.push({ title: item });
@@ -51,7 +47,17 @@ app.post('/add', async (req, res) => {
   }
 });
 
-app.post('/edit', (req, res) => {});
+app.post('/edit', async (req, res) => {
+  const item = req.body.updatedItemTitle;
+  const id = req.body.updatedItemId;
+
+  try {
+    await db.query('UPDATE items SET title = ($1) WHERE id = $2', [item, id]);
+    res.redirect('/');
+  } catch (error) {
+    console.log(error.message);
+  }
+});
 
 app.post('/delete', (req, res) => {});
 
