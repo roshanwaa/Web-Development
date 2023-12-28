@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "description": "Build News website/app using Node.js, Express, EJS and we'll be also using some dependencies such as AXIOS, Body-Parser and Nodemon.",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,11 +1,10 @@
-import express from 'express';
+const express = require('express');
 
 const app = express();
 const port = 3000;
-const __dirname = 'public';
 
 // Static files
-app.use(express.static(__dirname));
+app.use(express.static('public'));
 // public static files directory (default is public static files directory)
 
 app.use('CSS', express.static(__dirname + '/public/CSS'));
