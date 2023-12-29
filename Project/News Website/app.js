@@ -7,7 +7,7 @@ const port = 3000;
 app.use(express.static('public'));
 // public static files directory (default is public static files directory)
 
-app.use('CSS', express.static(__dirname + '/public/CSS'));
+app.use('css', express.static(__dirname + '/public/css/'));
 app.use('Image', express.static(__dirname + '/public/Image'));
 app.use('JS', express.static(__dirname + '/public/JS'));
 
