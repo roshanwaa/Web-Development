@@ -4,12 +4,12 @@
 }
 
 body {
-  background-color: #000;
   margin: 0;
 }
 
 img {
   max-width: 100%;
+  height: 300px;
 }
 
 p {
@@ -45,17 +45,18 @@ p {
 }
 
 .card {
-  transition: 1.5s;
+  transition: 3s;
   top: 0px;
   overflow: hidden;
-
+  margin: 1rem;
+  text-decoration: none !important;
+  border: none !important;
   .go-corner {
     opacity: 0.7;
   }
 
   &:hover {
-    border: 1px solid #000000;
-    box-shadow: 0px 0px 999px 999px rgba(37, 36, 36, 0.5);
+    box-shadow: 0px 0px 999px 999px rgba(37, 36, 36, 0.284);
     z-index: 500;
   }
 }
@@ -77,8 +78,4 @@ input.search-query {
 .news {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-}
-.card {
-  margin: 1rem;
-  text-decoration: none !important;
 }
