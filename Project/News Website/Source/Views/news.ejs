@@ -46,6 +46,18 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Cricket</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Finance</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Politics</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Tech</a>
+              </li>
             </ul>
             <form class="d-flex" role="search">
               <input
@@ -70,7 +82,10 @@
             class="card-img-top"
             src="<%= news.urlToImage %>"
             alt="Card image cap" />
-          <a href="#" class="text-decoration-none p-2">
+          <a
+            href="<%- news.url %>"
+            class="text-decoration-none p-2"
+            target="_blank">
             <h4 class="text-uppercase text-info"><%= news.title %></h4>
             <p class="small"><%= news.description %></p>
             <div class="go-corner" href="#">

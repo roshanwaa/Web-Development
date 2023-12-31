@@ -2,13 +2,15 @@ const express = require('express');
 const axios = require('axios');
 const newsRouter = express.Router();
 
+const API_KEY = '26f57ffe661149508088ce06b61096d8';
+const URL = 'https://newsapi.org/v2/everything?q=';
 newsRouter.get('', async (req, res) => {
-  try {
-    const fetchNews = await axios.get(
-      'https://newsapi.org/v2/everything?domains=wsj.com&apiKey=26f57ffe661149508088ce06b61096d8'
-    );
+  const query = 'India' || req.body.query;
 
-    console.log(fetchNews.data);
+  try {
+    const fetchNews = await axios.get(`${URL}${query}&apiKey=${API_KEY}`);
+
+    // console.log(fetchNews.data);
 
     res.render('news', { articles: fetchNews.data.articles });
   } catch (error) {
