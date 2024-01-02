@@ -1,4 +1,4 @@
-Cook Recipe
+Cooking Recipe
 Cooking made easy.#---------- HEADER ----------#
 
 alt = CookRecipe
