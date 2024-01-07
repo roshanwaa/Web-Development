@@ -16,3 +16,10 @@ function App() {
 }
 
 export default App
+
+// In Pure JS code looks like
+
+// export default App
+// var h1 = document.createElement('h1');
+// h1.innerHTML = 'Hello World'
+// document.getElementById('root').appendChild(h1)
