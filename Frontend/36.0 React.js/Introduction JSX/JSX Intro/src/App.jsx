@@ -1,13 +1,15 @@
 import './App.css'
 
 function App() {
-  const name = "Roshan";
-
+  const fName = "Roshan";
+  const lName = "Kumar";
+  const ranNum = Math.floor(Math.random() * 100)
+  const currentYR = new Date().getFullYear()
   return (
-    <div className>
+    <div className='mainContainer'>
       <div className="">
-        <h1 className='h1Tag'>Hello {name}</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, obcaecati, at aperiam expedita iusto quia recusandae similique, ducimus molestiae error optio! Natus iure fugiat fugit omnis eaque pariatur animi nulla!</p>
+        <h1 className='h1Tag'>Hello {`${fName} ${lName}`}</h1>
+        <p>Random Number is {ranNum}</p>
         <div className="container">
           <h1 className='h1Tag'>My Favourite Food</h1>
           <ul>
@@ -18,7 +20,7 @@ function App() {
         </div>
       </div>
       <footer>
-        <h3>💕 Roshan.waa</h3>
+        <h3>💕 ⓒ Roshan.waa {currentYR}</h3>
       </footer>
     </div>
   )
