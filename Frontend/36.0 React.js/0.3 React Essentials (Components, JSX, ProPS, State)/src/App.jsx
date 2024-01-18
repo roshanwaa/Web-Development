@@ -30,13 +30,7 @@ function App() {
           <h2>Time to get started!</h2>
           <ul>
             {CORE_CONCEPTS.map((val) => {
-              return (
-                <CoreConcepts
-                  title={val.title}
-                  image={val.image}
-                  description={val.description}
-                />
-              );
+              return <CoreConcepts {...val} />;
             })}
           </ul>
         </section>
