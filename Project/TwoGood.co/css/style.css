@@ -2,9 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Gilroy';
+  font-family: 'Gilroy', sans-serif !important;
 }
-
+*::selection {
+  color: #fff;
+  background-color: black;
+}
 html,
 body {
   height: 100%;
@@ -15,4 +18,42 @@ body {
   min-height: 100vh;
   width: 100%;
   position: relative;
+  padding: 0 1vw;
+  padding-top: 15vh;
+}
+#page1 h1 {
+  /* font-size: calc((100vw - 48px) * 0.1695); */
+  font-size: 15.4vw;
+  /* text-align: center; */
+  line-height: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: -8px;
+  font-family: futura;
+}
+
+#videoContainer {
+  height: 100vh;
+  width: 100%;
+  background-color: gray;
+  margin-top: 1vw;
+  position: relative;
+}
+#videoContainer #play {
+  padding: 3vw 2vw;
+  background-color: #000000a4;
+  color: #fff;
+  font-size: 1vw;
+  text-transform: uppercase;
+  position: fixed !important;
+  font-family: 'futura';
+  font-weight: bold;
+  letter-spacing: 4px;
+  border-radius: 50%;
+  opacity: 0;
+  scale: 0;
+}
+#videoContainer video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
