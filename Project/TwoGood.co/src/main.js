@@ -22,7 +22,7 @@ const videoContainerAnimation = () => {
   videoContainer.addEventListener('mousemove', (dets) => {
     gsap.to(playBtn, {
       left: dets.x - 50,
-      top: dets.y - 60,
+      top: dets.y - 80,
     });
   });
 };
@@ -37,9 +37,9 @@ const loadingAnimation = () => {
     stagger: 0.4,
   });
   gsap.from('#page1 #videoContainer', {
-    scale: 0.8,
+    scale: 0.9,
     opacity: 0,
-    delay: 1.5,
+    delay: 1.9,
     duration: 0.3,
   });
 };

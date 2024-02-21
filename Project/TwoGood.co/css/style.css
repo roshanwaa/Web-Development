@@ -10,13 +10,13 @@
 }
 html,
 body {
-  background-color: #eeedeb;
+  background-color: #f7f7f7;
   height: 100%;
   width: 100%;
 }
 
 #page1 {
-  background-color: #e1f0da;
+  background-color: #e5fddc;
   min-height: 100vh;
   width: 100%;
   position: relative;
@@ -26,7 +26,7 @@ body {
 #page1 h1 {
   /* font-size: calc((100vw - 48px) * 0.1695); */
   font-size: 15.4vw;
-  text-align: center;
+  text-align: left;
   line-height: 0.85em;
   text-transform: uppercase;
   letter-spacing: -8px;
@@ -41,7 +41,7 @@ body {
   position: relative;
 }
 #videoContainer #play {
-  padding: 3vw 2vw;
+  padding: 2.7vw 2vw;
   background-color: #000000a4;
   color: #fff;
   font-size: 1vw;
@@ -70,7 +70,7 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  padding: 2vw 1vw;
+  padding: 2vw 0;
   justify-content: space-between;
 }
 
