@@ -160,6 +160,55 @@ body {
   transform: translate(-50%, -50%) scale(0);
 }
 
+#nav {
+  /* height: 100px; */
+  width: 100%;
+  /* background-color: burlywood; */
+  position: fixed;
+  z-index: 99;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 25px;
+}
+
+#nav #nav-part2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+#links,
+#icons {
+  padding: 0 10px 10px 10px;
+}
+
+#nav-part1 {
+  /* background-color: RED; */
+  height: 82px;
+  overflow: hidden;
+}
+
+#nav-part1 svg {
+  display: block;
+}
+
+#nav-part2 #links a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 500;
+  font-size: 14px;
+  margin: 0 20px;
+}
+
+#nav-part2 #icons i {
+  font-size: 18px;
+  margin: 0 20px;
+  font-weight: 100;
+}
+
 @media (max-width: 600px) {
   #page1 {
     padding: 0 3vw;
@@ -230,5 +279,56 @@ body {
 
   .child img {
     height: 100%;
+  }
+  #nav {
+    /* height: 100px; */
+    width: 100%;
+    /* background-color: burlywood; */
+    position: fixed;
+    z-index: 99;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 15px;
+  }
+
+  #nav #nav-part2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  #links {
+    padding: 10px;
+    display: none;
+  }
+
+  #nav-part1 {
+    /* background-color: RED; */
+    height: 67px;
+    overflow: hidden;
+  }
+
+  #nav-part1 svg {
+    display: block;
+    height: 67px;
+    width: 80px;
+  }
+  #nav #twogoodlogo {
+    height: 40px;
+    margin-left: -20px;
+  }
+
+  #icons {
+    padding: 7px;
+    border-radius: 50px;
+    background-color: #f7f7f7;
+  }
+
+  #nav-part2 #icons i {
+    font-size: 15px;
+    margin: 0 20px;
+    font-weight: 100;
   }
 }
