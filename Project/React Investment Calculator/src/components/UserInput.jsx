@@ -1,27 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const INVESTMENT = {
-  initialInvestment: 10000,
-  annulInvestment: 1200,
-  expectedReturn: 6,
-  duration: 10,
-};
-export const UserInput = () => {
-  const [userInput, setUserInput] = useState(INVESTMENT);
-
-  const handleChange = (inputIdentifier, newValue) => {
-    setUserInput((previousValue) => {
-      console.log({
-        ...previousValue,
-        [inputIdentifier]: newValue,
-      });
-      return {
-        ...previousValue,
-        [inputIdentifier]: newValue,
-      };
-    });
-  };
-
+export const UserInput = ({ userInput, onChangeInput }) => {
   return (
     <section id="user-input">
       <div className="input-group">
@@ -32,7 +11,7 @@ export const UserInput = () => {
             required
             value={userInput.initialInvestment}
             onChange={(e) => {
-              handleChange('initialInvestment', e.target.value);
+              onChangeInput('initialInvestment', e.target.value);
             }}
           />
         </p>
@@ -42,7 +21,7 @@ export const UserInput = () => {
             type="number"
             value={userInput.annulInvestment}
             onChange={(e) => {
-              handleChange('annulInvestment', e.target.value);
+              onChangeInput('annulInvestment', e.target.value);
             }}
           />
         </p>
@@ -52,7 +31,7 @@ export const UserInput = () => {
             type="number"
             value={userInput.expectedReturn}
             onChange={(e) => {
-              handleChange('expectedReturn', e.target.value);
+              onChangeInput('expectedReturn', e.target.value);
             }}
           />
         </p>
@@ -62,7 +41,7 @@ export const UserInput = () => {
             type="number"
             value={userInput.duration}
             onChange={(e) => {
-              handleChange('duration', e.target.value);
+              onChangeInput('duration', e.target.value);
             }}
           />
         </p>
