@@ -5,7 +5,7 @@ import { Result } from './components/Result';
 
 const INVESTMENT = {
   initialInvestment: 10000,
-  annulInvestment: 1200,
+  annualInvestment: 1200,
   expectedReturn: 6,
   duration: 10,
 };
@@ -14,13 +14,9 @@ function App() {
 
   const handleChange = (inputIdentifier, newValue) => {
     setUserInput((previousValue) => {
-      // console.log({
-      //   ...previousValue,
-      //   [inputIdentifier]: newValue,
-      // });
       return {
         ...previousValue,
-        [inputIdentifier]: newValue,
+        [inputIdentifier]: +newValue,
       };
     });
   };

@@ -19,9 +19,9 @@ export const UserInput = ({ userInput, onChangeInput }) => {
           <label>Annual Investment</label>
           <input
             type="number"
-            value={userInput.annulInvestment}
+            value={userInput.annualInvestment}
             onChange={(e) => {
-              onChangeInput('annulInvestment', e.target.value);
+              onChangeInput('annualInvestment', e.target.value);
             }}
           />
         </p>
