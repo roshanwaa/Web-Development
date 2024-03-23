@@ -29,6 +29,30 @@ const Input = styled.input`
   color: ${({ $invalid }) => ($invalid ? '#ef4444' : '#6b7280')};
 `;
 
+const Button = styled.button`
+  padding: 1rem 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+  color: #1f2937;
+  background-color: #e05549;
+  border-radius: 6px;
+  border: none;
+
+  &:hover {
+    background-color: #f0920e;
+  }
+`;
+
+const TextButton = styled.button`
+  color: #f0b322;
+  border: none;
+
+  &:hover {
+    color: #f0920e;
+  }
+`;
+
 export default function AuthInputs() {
   const [enteredEmail, setEnteredEmail] = useState('');
   const [enteredPassword, setEnteredPassword] = useState('');
@@ -72,12 +96,12 @@ export default function AuthInputs() {
         </p>
       </ControlContainer>
       <div className="actions">
-        <button type="button" className="text-button">
+        <TextButton type="button" className="text-button">
           Create a new account
-        </button>
-        <button className="button" onClick={handleLogin}>
+        </TextButton>
+        <Button className="button" onClick={handleLogin}>
           Sign In
-        </button>
+        </Button>
       </div>
     </div>
   );
