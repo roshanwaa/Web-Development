@@ -1,13 +1,22 @@
 import { useState } from 'react';
 import { styled } from 'styled-components';
+import Button from './Button';
 import CustomInput from './Input';
-import { Button } from './Button';
 
 const ControlContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
+`;
+
+const TextButton = styled.button`
+  color: #f0b322;
+  border: none;
+
+  &:hover {
+    color: #f0920e;
+  }
 `;
 
 export default function AuthInputs() {
@@ -50,10 +59,12 @@ export default function AuthInputs() {
         />
       </ControlContainer>
       <div className="actions">
-        <Button type="button" className="text-button">
+        <TextButton type="button" className="text-button">
           Create a new account
+        </TextButton>
+        <Button className="button" onClick={handleLogin}>
+          Sign In
         </Button>
-        <Button onClick={handleLogin}>Sign In</Button>
       </div>
     </div>
   );
